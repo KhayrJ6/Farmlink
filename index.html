@@ -1,0 +1,427 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Farmlink+
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+   body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .hamburger-top,
+    .hamburger-middle,
+    .hamburger-bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2%;
+      transform: rotate(0);
+      transition: all 0.5s;
+    }
+
+    .hamburger-middle {
+      transform: translateY(7px);
+    }
+
+    .hamburger-bottom {
+      transform: translateY(14px);
+    }
+
+    .open {
+      transform: rotate(90deg);
+      transform: translateY(0px);
+    }
+
+    .open .hamburger-top {
+      transform: rotate(45deg) translateY(6px) translate(6px);
+    }
+
+    .open .hamburger-middle {
+      display: none;
+    }
+
+    .open .hamburger-bottom {
+      transform: rotate(-45deg) translateY(6px) translate(-6px);
+    }
+  </style>
+ </head>
+ <body class="bg-[#1B1F1A] text-white">
+  <header class="max-w-7xl mx-auto px-6 sm:px-10 py-6 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img alt="Farmlink logo, stylized with green diagonal lines" class="h-8" height="32" src="img/Logo.png" />
+      <span class="text-white font-semibold text-lg"></span>
+    </div>
+  
+    <!-- Desktop Nav -->
+    <nav class="bg-[#2A2F28] md:block hidden p-6 max-w-md px-10 border rounded-full">
+      <ul class="hidden md:flex space-x-10 font-medium text-sm text-white/80">
+        <li><a class="hover:text-[#B1FD28]" href="index.html">Home</a></li>
+        <li><a class="hover:text-[#B1FD28]" href="dashboard.html">Dashboard</a></li>
+        <li><a class="hover:text-[#B1FD28]" href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Desktop CTA Button -->
+    <a class="hidden md:inline-block bg-[#B1FD28] text-black font-semibold text-sm rounded-md px-5 py-2 hover:bg-[#a6e600]" href="#">
+      Get Started
+    </a>
+  
+    <!-- Mobile Hamburger Button -->
+    <button id="menu-btn" class="block md:hidden hamburger focus:outline-none ml-auto">
+      <span class="hamburger-top"></span>
+      <span class="hamburger-middle"></span>
+      <span class="hamburger-bottom"></span>
+    </button>
+  
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+      <div id="menu" class="absolute right-6 top-16 flex-col hidden items-end bg-white text-black py-8 px-6 space-y-6 rounded-lg shadow-lg z-50">
+        <a class="hover:text-[#B1FD28]" href="index.html">Home</a>
+        <a class="hover:text-[#B1FD28]" href="dashboard.html">Dashboard</a>
+        <a class="hover:text-[#B1FD28]" href="about.html">About Us</a>
+      </div>
+    </div>
+  </header>
+  
+  <main class="max-w-7xl mx-auto px-6 sm:px-10">
+    <section class="flex flex-col md:flex-row items-center justify-between gap-20 md:gap-20 mt-10 md:mt-20 md:mb-6">
+      <div class="max-w-xl space-y-6">
+        <h1 class="text-white text-4xl sm:text-5xl font-semibold leading-tight">
+          Unleash Your
+          <br/>
+          <span class="text-[#B1FD28]">
+          Creativity
+          </span>
+        </h1>
+        <p class="text-white/70 mt-3 text-sm sm:text-base max-w-md">
+          Unlock your biggest potential. Seamlessly flex agriculture with cutting-edge AI technology.
+        </p>
+        <div class="mt-6 flex space-x-4">
+          <button class="bg-[#B1FD28] text-black font-semibold rounded-md px-6 py-2 text-sm hover:bg-[#a6e600]">
+            <a class="hover:text-[#B1FD28]" href="about.html">Get Started</a>
+          </button>
+          <button class="border border-[#B1FD28] text-[#B1FD28] font-semibold rounded-md px-6 py-2 text-sm hover:bg-white/10">
+            <a class="hover:text-[#B1FD28]" href="about.html">About Us</a>
+          </button>
+        </div>
+      </div>
+      <div class="w-48 sm:w-64 md:w-72">
+      <img alt="Illustration of a hand holding a smartphone with blank white screen and a person figure behind" class="ml-auto" src="img/Frame 8.png"/>
+      </div>
+    </section>
+
+   <section class="mt-20 max-w-5xl mx-auto">
+    <h2 class="text-white animate-on-scroll text-5xl leading-[1.80] font-semibold">
+     Why
+     <span class="text-[#B1FD28]">
+      Farmlink+
+     </span>
+     ?
+    </h2>
+    <h3 class="mt-2 text-base sm:text-4xl font-bold text-white/90">
+     <span class="text-[#FFFF00]">
+      30%
+     </span>
+     YIELD INCREASE WITH
+     <span class="text-[#FFFF00]">
+      AI
+     </span>
+    </h3>
+    <p class="mt-2 text-white/70 max-w-xl text-sm sm:text-base">
+     Unleash your biggest potential. Seamlessly flex agriculture with cutting-edge AI technology.
+    </p>
+    <div class="mt-20 flex flex-col sm:flex-row sm:space-x-6 space-y-6 sm:space-y-0 max-w-5xl">
+     <div class="bg-[#2B2B2B] rounded-lg p-5 flex-1 h-40">
+      <div class="flex items-center space-x-3 mb-3">
+       <div class="bg-[#B1FD28] text-black rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">
+        1
+       </div>
+       <h4 class="text-white font-semibold text-sm">
+        Submit Report
+       </h4>
+      </div>
+      <p class="text-white/70 text-xs sm:text-sm">
+       Submit your crop report and get instant feedback on your farm’s health.
+      </p>
+     </div>
+     <div class="bg-[#2B2B2B] rounded-lg p-5 flex-1">
+      <div class="flex items-center space-x-3 mb-3">
+       <div class="bg-[#B1FD28] text-black rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">
+        2
+       </div>
+       <h4 class="text-white font-semibold text-sm">
+        Gain Insights
+       </h4>
+      </div>
+      <p class="text-white/70 text-xs sm:text-sm">
+       Receive AI-powered insights to optimize your crop yield and reduce waste.
+      </p>
+     </div>
+     <div class="bg-[#2B2B2B] rounded-lg p-5 flex-1">
+      <div class="flex items-center space-x-3 mb-3">
+       <div class="bg-[#B1FD28] text-black rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs">
+        3
+       </div>
+       <h4 class="text-white font-semibold text-sm">
+        Refine Creation
+       </h4>
+      </div>
+      <p class="text-white/70 text-xs sm:text-sm">
+       Use AI suggestions to refine your farming techniques and increase productivity.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="mt-20 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+
+    <div class="flex flex-col md:flex-col-2 md:space-x-6 md:space-y-6 md:items-start">
+        <div class="flex flex-row gap-4 mb-6 md:mb-0  mx-auto mt-10">
+              <img alt="Closeup photo of a small green seedling sprouting from dark soil" class="w-48 hidden md:block rounded-lg mx-auto" height="160" src="https://storage.googleapis.com/a1aa/image/f75672f6-6e23-4365-3646-0ffca14a1830.jpg" width="160"/>
+              <div class="bg-[#3a3a3a] rounded-lg p-5 mt-4 md:mt-0 md:flex md:flex-col md:justify-center">
+                <p class="text-white font-bold text-3xl">
+                85+
+                </p>
+                <p class="text-white/70 uppercase text-xs mt-1">
+                Agri-based innovation ideas
+                </p>
+              </div>
+        </div>
+
+          <div>
+          <img src="img/Group 8.png" class="sm:mt-6">
+          </div>
+    </div>
+
+    <div class=" rounded-lg md:px-10 py-10 flex flex-col justify-center">
+     <h3 class="text-white font-semibold text-3xl  md:text-5xl mb-2">
+      OUR
+      <span class="text-[3cc307]">
+       GOAL
+      </span>
+     </h3>
+     <p class="text-white/70 text-base mb-6">
+      Protect &amp;
+      <span class="text-[3cc307] font-semibold">
+       empowered
+      </span>
+      producers and aid in the
+      <span class="text-[3cc307] font-semibold">
+       solution
+      </span>
+      .
+     </p>
+     <div class="flex flex-col space-y-6">
+      <button class="border border-[#3cc307] text-[ffffff] rounded-full py-6 text-base font-semibold hover:bg-white/10">
+       Agricultural Support
+      </button>
+      <button class="border border-[3cc307] text-[ffffff] rounded-full py-6 text-base font-semibold hover:bg-white/10">
+       Combating Food Inflation
+      </button>
+      <button class="border border-[3cc307] text-[ffffff] rounded-full py-6 text-base font-semibold hover:bg-white/10">
+       Collaboration Community
+      </button>
+      <button class="border border-[3cc307] text-[ffffff] rounded-full py-6 text-base font-semibold hover:bg-white/10">
+       Price Patrol
+      </button>
+     </div>
+    </div>
+
+    </section>
+    
+    <section class="mt-16 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col md:items-center md:justify-center space-y-6">
+        <form class="bg-[#2B2B2B] py-10 rounded-lg p-6 w-full max-w-7xl">
+          <h3 class="text-white font-semibold text-sm mb-3">
+          Submit a
+          <span class="text-[#B1FD28]">
+            Report
+          </span>
+          </h3>
+          <p class="text-white/70 py-6 mb-4">
+          Just describe the problem — we'll do the rest.
+          </p>
+          <label class="text-white/70 text-xs font-semibold" for="crop">
+          Crop Affected
+          </label>
+          <select class="w-full rounded-md bg-[#121212] border border-[#444] text-white text-xs py-2 px-3 mt-1 mb-4 focus:outline-none focus:ring-1 focus:ring-[#B1FD28]" id="crop" name="crop">
+          <option>
+            Wheat
+          </option>
+          <option>
+            Corn
+          </option>
+          <option>
+            Rice
+          </option>
+          <option>
+            Soybean
+          </option>
+          </select>
+          <label class="text-white/70 text-xs  font-semibold" for="issue">
+          What issue are you facing?
+          </label>
+          <textarea class="w-full py-6 rounded-md bg-[#121212] border border-[#444] text-white text-xs py-2 px-3 mt-1 mb-4 resize-none focus:outline-none focus:ring-1 focus:ring-[#B1FD28]" id="issue" name="issue" rows="3"></textarea>
+          <label class="text-white/70 text-xs font-semibold" for="location">
+          Where is your farm located?
+          </label>
+          <input class="w-full rounded-md bg-[#121212] border border-[#444] text-white text-xs py-2 px-3 mt-1 mb-6 focus:outline-none focus:ring-1 focus:ring-[#B1FD28]" id="location" name="location" type="text"/>
+          <button class="w-full bg-[#B1FD28] text-black font-semibold rounded-md py-2 text-xs hover:bg-[#a6e600]" type="submit">
+          SUBMIT REPORT
+          </button>
+        </form>
+        </div>
+        
+          <img alt="Photo of a man holding a bunch of green plants with abstract green shapes behind him" class="absolute top-0 left-0  object-cover rounded-lg relative w-72 h-auto mx-auto " src="img/Frame 7.png"/>
+    </section>
+
+   </section>
+   <section class="mt-20 max-w-7xl h-48 mx-auto bg-[#2B2B2B] flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex-1 max-w-5xl px-10">
+     <h3 class="text-white font-semibold py-6 md:py-1 md:text-3xl">
+      Stay Inspired with Our
+      <br/>
+      Latest
+      <span class="text-[#B1FD28]">
+       Insights
+      </span>
+     </h3>
+     <p>Where is your farm located?</p>
+     <button class="mt-3 bg-[#B1FD28] text-black font-semibold rounded-md px-5 py-1 text-xs hover:bg-[#a6e600]">
+      View All
+     </button>
+      
+
+    </div>
+    <div class="flex-1 max-w-sm">
+     <img alt="Closeup photo of a field of corn plants with green leaves and stalks" class="rounded-lg hidden md:block w-full h-48 object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/4f5bdc9c-0db0-4c25-3ed4-c7b62fcd7312.jpg" width="320"/>
+    </div>
+   </section>
+
+   
+   <section class="mt-20 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div>
+     <img alt="Photo of a smiling woman farmer standing in a green field with blue sky" class="rounded-lg w-full md:h-56 object-cover" height="160" src="img/f1ada4c2e20d1bead875b224bab61702.jpg" width="320"/>
+    </div>
+    <div class="bg-[#EDED1F]/25 rounded-lg p-5 flex flex-col justify-center">
+     <p class="text-white font-bold text-3xl">
+      10+
+     </p>
+     <p class="text-white/70 uppercase text-xs mt-1">
+      agri-based innovation ideas
+     </p>
+     <p class="text-white/70 text-xs mt-2">
+      With 10+ ideas, we have pioneered advancements in precision agriculture, helping farmers to increase yields by 30%
+     </p>
+    </div>
+    <div>
+     <img alt="Closeup photo of soil and plant roots with small green leaves" class="rounded-lg w-full h-56 object-cover" height="160" src="img/4a4e202ee431eaeb80b89a0f2127b97e.jpg" width="320"/>
+    </div>
+    <div class="bg-[#EDED1F] rounded-lg p-5 flex flex-col justify-center">
+     <p class="text-black font-bold text-3xl">
+      85+
+     </p>
+     <p class="text-black uppercase text-xs mt-1">
+      Customer Satisfaction Rate
+     </p>
+     <p class="text-black text-xs mt-2">
+      With an 85% customer satisfaction rate, our users trust us to deliver valuable tools and support that enables them to woek smarter and grow better.
+     </p>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-[#1A1A1A] mt-20 py-10">
+   <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row justify-between text-white/70 text-xs space-y-6 md:space-y-0">
+    <div class="flex flex-col space-y-2 max-w-xs">
+     <div class="flex items-center space-x-2">
+      <img alt="Farmlink logo small green F icon" class=" h-6" height="24" src="img/Logo.png"/>
+      <span class="font-semibold text-white text-sm">
+      </span>
+     </div>
+     <p>
+      AI-driven agri-tech solutions to grow a better future.
+     </p>
+     <p>
+      © 2025 Farmlink — All Rights Reserved.
+     </p>
+     <p>
+      Built by: Khairat Jimoh
+     </p>
+    </div>
+    <div class="flex space-x-12">
+     <div>
+      <h4 class="font-semibold text-white mb-3">
+       Products
+      </h4>
+      <ul class="space-y-2">
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         Home
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         Dashboard
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         About Us
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-semibold text-white mb-3">
+       Resources
+      </h4>
+      <ul class="space-y-2">
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         About Us
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         Contact
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         Support
+        </a>
+       </li>
+       <li>
+        <a class="hover:text-[#B1FD28]" href="#">
+         FAQs
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+ </body>
+</html>

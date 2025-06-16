@@ -1,0 +1,147 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Farmlink+ Dashboard</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      
+        <!-- Firebase SDKs -->
+        <!-- Firebase SDKs -->
+        <!-- Firebase SDKs (compat) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+<style>
+  body {
+     font-family: 'Poppins', sans-serif;
+   }
+
+   .hamburger {
+     cursor: pointer;
+     width: 24px;
+     height: 24px;
+     transition: all 0.25s;
+     position: relative;
+   }
+
+   .hamburger-top,
+   .hamburger-middle,
+   .hamburger-bottom {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 24px;
+     height: 2px;
+     background: white;
+     border-radius: 2%;
+     transform: rotate(0);
+     transition: all 0.5s;
+   }
+
+   .hamburger-middle {
+     transform: translateY(7px);
+   }
+
+   .hamburger-bottom {
+     transform: translateY(14px);
+   }
+
+   .open {
+     transform: rotate(90deg);
+     transform: translateY(0px);
+   }
+
+   .open .hamburger-top {
+     transform: rotate(45deg) translateY(6px) translate(6px);
+   }
+
+   .open .hamburger-middle {
+     display: none;
+   }
+
+   .open .hamburger-bottom {
+     transform: rotate(-45deg) translateY(6px) translate(-6px);
+   }
+ </style>
+
+    </head>   
+        <header class="max-w-7xl mx-auto px-6 sm:px-10 py-6 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+           <img alt="Farmlink logo, stylized F with green diagonal lines" class=" h-8" height="32" src="img/Logo.png"/>
+           <span class="text-white font-semibold text-lg">
+           </span>
+          </div>
+          <nav class="bg-[#2A2F28] md:block hidden p-6 max-w-md px-10 border rounded-full">
+           <ul class="hidden md:flex space-x-10 font-medium text-sm text-white/80">
+            <li>
+             <a class="hover:text-[#B1FD28]" href="index.html">
+              Home
+             </a>
+            </li>
+            <li>
+             <a class="hover:text-[#B1FD28]" href="about.html">
+              About Us
+             </a>
+            </li>
+           </ul>
+          </nav>
+
+          <button id="menu-btn" class="block md:hidden hamburger focus:outline-none ml-auto">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+
+          <div class="md:hidden">
+            <div id="menu" class="absolute right-6 top-20 flex-col hidden items-end bg-white text-black py-8 px-6 space-y-6 rounded-lg shadow-lg z-50">
+              <a class="hover:text-[#B1FD28]" href="index.html">Home</a>
+              <a class="hover:text-[#B1FD28]" href="about.html">About Us</a>
+            </div>
+          </div>
+
+
+        </header>
+    
+      
+<body class="bg-[#1B1F1A] text-white font-sans p-6">
+  <h1 class="text-3xl font-bold mb-6">📊 Farmlink+ Dashboard</h1>
+
+  <!-- AI Advice Output -->
+  <section class="bg-[#2B2B2B] p-4 rounded-xl mb-10">
+    <h2 class="text-xl font-semibold mb-2">🤖 AI Advice</h2>
+    <div id="aiResponse" class="text-white/80">No report submitted yet.</div>
+  </section>
+
+  <!-- Price Patrol Card -->
+  <section class="bg-green-950 text-white rounded-2xl p-6 mb-10">
+    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+      📈 Price Patrol
+      <span class="text-sm bg-green-700 px-2 py-1 rounded-full">Live</span>
+    </h2>
+    <div id="price-list" class="space-y-3">
+      <p class="text-sm text-gray-300">Loading latest prices...</p>
+    </div>
+  </section>
+
+  <!-- Farmer Chat Board -->
+  <div class="bg-[#1e1e1e] p-4 rounded-md shadow max-w-xl mx-auto mt-6">
+    <h3 class="text-white text-lg font-semibold mb-2">💬 Farmer Chat</h3>
+    <div id="chatBox" class="h-48 overflow-y-auto bg-[#2b2b2b] p-2 mb-2 rounded text-white text-sm"></div>
+    <div class="flex gap-2">
+      <input id="chatInput" type="text" placeholder="Type a message..." class="flex-1 rounded px-3 py-2 text-sm bg-[#121212] text-white border border-gray-600 focus:outline-none focus:ring-1 focus:ring-green-400" />
+      <button id="sendBtn" class="bg-green-500 hover:bg-green-600 text-sm text-white px-4 py-2 rounded">
+        Send</button>
+
+    </div>
+  </div>
+  
+
+  <script src="chat.js"></script>
+  <script src="dashboard.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
+

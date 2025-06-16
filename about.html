@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | FarmLink+</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+<style>
+    body {
+       font-family: 'Poppins', sans-serif;
+     }
+  
+     .hamburger {
+       cursor: pointer;
+       width: 24px;
+       height: 24px;
+       transition: all 0.25s;
+       position: relative;
+     }
+  
+     .hamburger-top,
+     .hamburger-middle,
+     .hamburger-bottom {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 24px;
+       height: 2px;
+       background: white;
+       border-radius: 2%;
+       transform: rotate(0);
+       transition: all 0.5s;
+     }
+  
+     .hamburger-middle {
+       transform: translateY(7px);
+     }
+  
+     .hamburger-bottom {
+       transform: translateY(14px);
+     }
+  
+     .open {
+       transform: rotate(90deg);
+       transform: translateY(0px);
+     }
+  
+     .open .hamburger-top {
+       transform: rotate(45deg) translateY(6px) translate(6px);
+     }
+  
+     .open .hamburger-middle {
+       display: none;
+     }
+  
+     .open .hamburger-bottom {
+       transform: rotate(-45deg) translateY(6px) translate(-6px);
+     }
+   </style>
+  
+</head>
+<body class="bg-[#1B1F1A] text-white">
+
+  <header class="max-w-7xl mx-auto px-6 sm:px-10 py-6 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="img/Logo.png" alt="FarmLink+ Logo" class="h-8" />
+      <span class="text-white font-bold text-lg"></span>
+    </div>
+    <nav class="bg-[#2A2F28] md:block hidden p-6 max-w-md px-10 border rounded-full">
+        <ul class="hidden md:flex space-x-10 font-medium text-sm text-white/80">
+         <li>
+          <a class="hover:text-[#B1FD28]" href="index.html">
+           Home
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-[#B1FD28]" href="dashboard.html">
+           Dashboard
+          </a>
+         </li>
+        </ul>
+       </nav>
+
+       <button id="menu-btn" class="block md:hidden hamburger focus:outline-none ml-auto">
+         <span class="hamburger-top"></span>
+         <span class="hamburger-middle"></span>
+         <span class="hamburger-bottom"></span>
+       </button>
+
+       <div class="md:hidden">
+         <div id="menu" class="absolute right-6 top-20 flex-col hidden items-end bg-white text-black py-8 px-6 space-y-6 rounded-lg shadow-lg z-50">
+           <a class="hover:text-[#B1FD28]" href="index.html">Home</a>
+           <a class="hover:text-[#B1FD28]" href="dashboard.html">Dashboard</a>
+         </div>
+       </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 sm:px-10 py-16">
+    <h1 class="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+      Empowering Farmers with Intelligence
+    </h1>
+    <p class="text-white/70 text-base sm:text-lg leading-relaxed max-w-3xl mb-10">
+      <strong>FarmLink+</strong> is a digital platform designed to connect, support, and empower farmers across the region using smart, accessible technology. With the help of AI, we provide instant farming advice, track local market prices, and offer a real-time chat feature that brings farmers together — all without the need for a complex backend.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-8">
+      <div class="bg-[#2B2B2B] p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-[#B1FD28] mb-2">🌾 Our Mission</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          We aim to reduce agricultural guesswork and inflation by empowering farmers with AI-driven decision tools, accurate local price data, and collaborative peer support.
+        </p>
+      </div>
+      <div class="bg-[#2B2B2B] p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-[#B1FD28] mb-2">🧠 Powered by AI</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Through the Gemini AI API, FarmLink+ generates smart, step-by-step farming advice based on real-time crop reports. It’s local, personal, and intelligent.
+        </p>
+      </div>
+      <div class="bg-[#2B2B2B] p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-[#B1FD28] mb-2">📊 Live Market Insights</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Our Price Patrol widget provides up-to-date price snapshots for major crops — enabling smarter selling, planning, and trading decisions.
+        </p>
+      </div>
+      <div class="bg-[#2B2B2B] p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold text-[#B1FD28] mb-2">💬 Farmer-to-Farmer Chat</h3>
+        <p class="text-white/70 text-sm leading-relaxed">
+          Our real-time chat feature allows farmers to connect, share challenges, and grow a sense of digital community — right from the dashboard.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <h2 class="text-2xl font-semibold mb-4 text-white">📍 Built for Impact</h2>
+      <p class="text-white/70 leading-relaxed text-sm sm:text-base max-w-3xl">
+        Whether you're a smallholder farmer in Kwara or an agricultural advocate in Kano, FarmLink+ was built with you in mind. No logins, no hassle — just pure, impactful technology that works for the community.
+      </p>
+    </div>
+  </main>
+
+  <footer class="bg-[#121212] mt-20 py-10">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row justify-between text-white/70 text-xs space-y-6 md:space-y-0">
+      <div>
+        <p class="font-semibold text-white mb-2">FarmLink+</p>
+        <p>© 2025. Built with AI. All rights reserved.</p>
+      </div>
+      <div class="flex space-x-6">
+        <a href="index.html" class="hover:text-[#B1FD28]">Home</a>
+        <a href="dashboard.html" class="hover:text-[#B1FD28]">Dashboard</a>
+        <a href="about.html" class="hover:text-[#B1FD28]">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
