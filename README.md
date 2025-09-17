@@ -3,4 +3,5 @@ Farmlink is a browser based web app built to help farmers get instant AI insight
 
 ### I built this using:
 HTML
+TAILWIND CSS
 
